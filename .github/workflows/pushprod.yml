@@ -1,0 +1,16 @@
+name: Deployment                                                                     
+on: [push] #to any branch                                                            
+jobs:                                                                                
+  prod:                                                                              
+    runs-on: ubuntu-latest                                                           
+    if: github.ref == 'refs/heads/master' # run this job only for the dev branch     
+    steps:                                                                           
+       - name: print in a master branches                                            
+         run : echo "rama master"                                                    
+                                                                                     
+  dev:                                                                               
+    runs-on: ubuntu-latest                                                           
+    if: github.ref == 'refs/heads/dev' # run this job only for the dev branch        
+    steps:                                                                           
+       - name: print in a dev branches                                               
+         run : echo "rama dev"                                                       
